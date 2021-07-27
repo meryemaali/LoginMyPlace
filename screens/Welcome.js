@@ -20,7 +20,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { CredentialsContext } from './../components/CredentialsContext';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   const { storedCredentials, setStoredCredentials } = useContext(CredentialsContext);
   const { nom, email } = storedCredentials;
 

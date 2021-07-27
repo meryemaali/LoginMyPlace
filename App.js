@@ -10,6 +10,7 @@ import { CredentialsContext } from './components/CredentialsContext';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Welcome from './screens/Welcome';
+import Scan from './screens/Scan';
 import RootStack from './navigators/RootStack';
 
 
@@ -38,8 +39,6 @@ export default function App() {
   }
 
   return (
-    <CredentialsContext.Provider value={{ storedCredentials, setStoredCredentials }}>
-      <RootStack />
-    </CredentialsContext.Provider>
+      <Scan />
   );
 }
