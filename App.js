@@ -10,7 +10,7 @@ import { CredentialsContext } from './components/CredentialsContext';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Welcome from './screens/Welcome';
-import Scan from './screens/Scan';
+import QRscanne from './screens/QRscanne';
 import RootStack from './navigators/RootStack';
 
 
@@ -39,6 +39,6 @@ export default function App() {
   }
 
   return (
-      <Scan />
+      <QRscanne />
   );
 }
