@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import {
   StyleSheet,
   View,
@@ -106,4 +106,4 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'center',
   },
-});
+});*/

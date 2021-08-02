@@ -38,7 +38,14 @@ export default function App() {
     onError={console.warn} />;
   }
 
-  return (
-      <QRscanne />
+  /*return (
+    <CredentialsContext.Provider value={{ storedCredentials, setStoredCredentials }}>
+      <RootStack />
+    </CredentialsContext.Provider>
+  );
+}*/
+
+ return (
+      <Welcome />
   );
 }

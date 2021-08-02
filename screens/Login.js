@@ -49,7 +49,9 @@ const Login = ({navigation}) => {
   const handleLogin = (credentials, setSubmitting) => {
     handleMessage(null);
     const url = 'https://dry-chamber-33880.herokuapp.com/user/signin';
-    axios.post(url, credentials).then((response) => {
+    axios
+    .post(url, credentials)
+    .then((response) => {
         const result = response.data;
         const { status, message, data } = result;
 
@@ -62,10 +64,9 @@ const Login = ({navigation}) => {
         setSubmitting(false);
       })
       .catch((error) => {
-        console.log(error.toJSON());
-        setSubmitting(false);
+       setSubmitting(false);
        handleMessage('An error occurred. Check your network and try again');
-
+       console.log(error.toJSON());
       })
   }
       
