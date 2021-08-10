@@ -15,6 +15,8 @@ import { CredentialsContext } from './../components/CredentialsContext';
 import Login from './../screens/Login';
 import Signup from './../screens/Signup';
 import Welcome from './../screens/Welcome';
+import List from './../screens/List';
+import Scan from './../screens/Scan';
 
 const Stack = createStackNavigator();
 
@@ -51,13 +53,16 @@ const RootStack = () => {
               <>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Signup" component={Signup} />
+                <Stack.Screen name="List" component={List} />
+                <Stack.Screen name="Scan" component={Scan} />
            </>
             )}   
           </Stack.Navigator>
+         
           </NavigationContainer>
               )}
         </CredentialsContext.Consumer>
-     
+      
   );
 };
 

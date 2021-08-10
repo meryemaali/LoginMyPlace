@@ -4,15 +4,27 @@ import { StatusBar } from 'expo-status-bar';
 
 import {
   
-  PageTitle,
-  SubTitle,
+  StyledContainer, 
+  PageLogo, 
+  PageTitle, 
+  SubTitle, 
+  StyledInputLabel, 
   StyledFormArea, 
-  StyledButton,
-  InnerContainer,
-  ButtonText,
-  Line,
-  WelcomeContainer,
-  WelcomeImage,
+  StyledButton, 
+  StyledTextInput, 
+  LeftIcon, 
+  RightIcon, 
+  InnerContainer, 
+  ButtonText, 
+  MsgBox, 
+  Line, 
+  ExtraView, 
+  ExtraText, 
+  TextLink, 
+  TextLinkContent, 
+  Colors, 
+  WelcomeContainer, 
+  WelcomeImage, 
   Avatar
 } from './../components/styles';
 
@@ -47,16 +59,16 @@ const clearLogin = () => {
               <StyledFormArea>
                <Line/>
 
-                <StyledButton onPress={() => {navigation.navigate('Login')}}>
-                     <ButtonText>List of places</ButtonText>
+                <StyledButton onPress={() => navigation.navigate('List')}>
+                     <ButtonText>List of seats</ButtonText>
                 </StyledButton>
-                <StyledButton onPress={() => {navigation.navigate('Login')}}>
+                <StyledButton onPress={() => {navigation.navigate('Scan')}}>
                      <ButtonText>Book a seat</ButtonText>
                 </StyledButton>
                 <StyledButton onPress={clearLogin}>
                      <ButtonText>Logout</ButtonText>
                 </StyledButton>
-                
+              
               </StyledFormArea>
             
           </WelcomeContainer>

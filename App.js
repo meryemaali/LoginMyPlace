@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import AppLoading from 'expo-app-loading'
+import AppLoading from 'expo-app-loading';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CredentialsContext } from './components/CredentialsContext';
@@ -10,7 +10,9 @@ import { CredentialsContext } from './components/CredentialsContext';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Welcome from './screens/Welcome';
-import QRscanne from './screens/QRscanne';
+import Scan from './screens/Scan';
+import List from './screens/List';
+
 import RootStack from './navigators/RootStack';
 
 
@@ -20,7 +22,7 @@ export default function App() {
    const [storedCredentials, setStoredCredentials] = useState("");
 
    const checkLoginCredentials = () => {
-    AsyncStorage.getItem('CMyPlaceCredentials')
+    AsyncStorage.getItem('MyPlaceCredentials')
       .then((result) => {
         if (result !== null) {
           setStoredCredentials(JSON.parse(result));
@@ -45,7 +47,7 @@ export default function App() {
   );
 }*/
 
- return (
+return (
       <Welcome />
   );
 }
