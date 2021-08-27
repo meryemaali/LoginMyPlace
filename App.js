@@ -12,6 +12,8 @@ import Signup from './screens/Signup';
 import Welcome from './screens/Welcome';
 import Scan from './screens/Scan';
 import List from './screens/List';
+import Date from './screens/Date';
+
 
 import RootStack from './navigators/RootStack';
 
@@ -40,14 +42,10 @@ export default function App() {
     onError={console.warn} />;
   }
 
-  /*return (
-    <CredentialsContext.Provider value={{ storedCredentials, setStoredCredentials }}>
-      <RootStack />
-    </CredentialsContext.Provider>
-  );
-}*/
-
 return (
-      <Welcome />
-  );
+<CredentialsContext.Provider value={{ storedCredentials, setStoredCredentials }}>
+  <RootStack />
+ </CredentialsContext.Provider>
+);
 }
+

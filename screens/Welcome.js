@@ -1,5 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { StatusBar } from 'expo-status-bar';
+//formik
+import {Formik} from 'formik';
+
+import {Octicons, Ionicons, Fontisto} from '@expo/vector-icons';
+
+import KeyboardAvoidingWrapper from '../components/KeyboardAvoidingWrapper';
+
+import {CredentialsContext} from '../components/CredentialsContext';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 import {
@@ -26,11 +37,9 @@ import {
   WelcomeContainer, 
   WelcomeImage, 
   Avatar
-} from './../components/styles';
+} from '../components/styles';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { CredentialsContext } from './../components/CredentialsContext';
 
 const Welcome = ({navigation}) => {
   const { storedCredentials, setStoredCredentials } = useContext(CredentialsContext);
@@ -44,30 +53,25 @@ const clearLogin = () => {
       .catch((error) => console.log(error));
   };
 
+  
  return (
       <>
         <StatusBar style="dark" />
         <InnerContainer>
         {/*<WelcomeImage resizeMode="cover" source={require('./../assets/img/logo.png')} />*/}
           <Avatar resizeMode="cover" source={require('./../assets/img/logo.png')} />
-          
-
-          <WelcomeContainer>
-          <PageTitle welcome={true}>Welcome! You</PageTitle>
+            <WelcomeContainer>
+          <PageTitle welcome={true}>Welcome!</PageTitle>
           <SubTitle welcome={true}>{nom || 'User' }</SubTitle>
            <SubTitle welcome={true}>{email || 'user@gmail.com'}</SubTitle>
               <StyledFormArea>
                <Line/>
 
-                <StyledButton onPress={() => navigation.navigate('List')}>
-                     <ButtonText>List of seats</ButtonText>
-                </StyledButton>
-                <StyledButton onPress={() => {navigation.navigate('Scan')}}>
-                     <ButtonText>Book a seat</ButtonText>
-                </StyledButton>
+                
                 <StyledButton onPress={clearLogin}>
                      <ButtonText>Logout</ButtonText>
                 </StyledButton>
+
               
               </StyledFormArea>
             

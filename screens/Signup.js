@@ -50,7 +50,7 @@ const Signup = ({navigation}) => {
 
    const handleSignup = (credentials, setSubmitting) => {
     handleMessage(null);
-    const url = 'https://dry-chamber-33880.herokuapp.com/user/signup';
+    const url = 'https://vast-scrubland-63151.herokuapp.com/user/signup';
     axios
       .post(url, credentials)
       .then((response) => {
@@ -101,13 +101,14 @@ const Signup = ({navigation}) => {
 
           
         <Formik
-            initialValues={{ nom: '',prenom: '', email: '', password: '', confirmPassword: '' }}
+            initialValues={{ nom: '',prenom: '', email: '',tel: '', password: '', confirmPassword: '' }}
             onSubmit={(values, { setSubmitting }) => {
              values = { ...values};
               if (
                 values.nom == '' ||
                 values.prenom == '' ||
                 values.email == '' ||
+                values.tel == '' ||
                 values.password == '' ||
                 values.confirmPassword == ''
               ) {
@@ -152,6 +153,16 @@ const Signup = ({navigation}) => {
                   keyboardType="email-address"
                   icon="mail"
                 />
+                <MyTextInput
+                 label="Phone number"
+                 placeholder="0645782584"
+                 placeholderTextColor={darkLight}
+                 onChangeText={handleChange ('tel')}
+                 onBlur={handleBlur ('tel')}
+                value={values.tel}
+                icon="phone"
+                />
+
                 
                 <MyTextInput
                   label="Password"

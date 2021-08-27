@@ -17,6 +17,10 @@ import Signup from './../screens/Signup';
 import Welcome from './../screens/Welcome';
 import List from './../screens/List';
 import Scan from './../screens/Scan';
+import Data from './../screens/Data';
+
+import Tabs from './../navigators/tabs';
+
 
 const Stack = createStackNavigator();
 
@@ -47,7 +51,7 @@ const RootStack = () => {
                   headerTintColor: primary,
                 }}
                 name="Welcome"
-                component={Welcome}
+                component={Tabs}
               />
             ) : (
               <>
@@ -55,6 +59,9 @@ const RootStack = () => {
                 <Stack.Screen name="Signup" component={Signup} />
                 <Stack.Screen name="List" component={List} />
                 <Stack.Screen name="Scan" component={Scan} />
+                <Stack.Screen name="Data" component={Data} />
+
+
            </>
             )}   
           </Stack.Navigator>
